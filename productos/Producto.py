@@ -1,30 +1,11 @@
 from dataclasses import dataclass
-from productos.Producto import Producto
-
 
 @dataclass
-
 class Producto:
-    def __init__(self):
-        self.productos: list[Producto] = []
+    id:int
+    nombre:str
+    precio:float
+    impuesto: int 
 
-    def recuperarTodos(self) -> list[Producto]:
-        return self.productos
-    
-    def añadir(self, producto: Producto) -> None:
-        self.productos.append(producto)
-    
-    def recuperar(self, productoId) -> Producto:
-        for producto in self.productos:
-            if producto.id == productoId:
-                return producto
-
-        raise Exception(f"No existe producto con id {productoId}")    
-
-def __repr__(self) -> str:
-    cadena = "PRODUCTOS"
-    for producto in self.productos:
-        cadena += "\n\t" + producto.__repr__()
-    return cadena
-
-    
+    def __repr__(self) -> str:
+        return f"{self.id}{self.nombre}{self.precio}{self.impuesto}"
